@@ -41,7 +41,7 @@ namespace WebPushDemo.Controllers
             var vapidDetails = new VapidDetails("mailto:example@example.com", vapidPublicKey, vapidPrivateKey);
 
             var webPushClient = new WebPushClient();
-            webPushClient.SendNotification(pushSubscription, payload, vapidDetails);
+            await webPushClient.SendNotificationAsync(pushSubscription, payload, vapidDetails);
 
             return View();
         }
